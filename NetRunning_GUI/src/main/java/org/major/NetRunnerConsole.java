@@ -39,6 +39,7 @@ public class NetRunnerConsole {
         Scan sc = new Scan();
         Slide slide = new Slide();
         Virus virus = new Virus();
+        Zap zap = new Zap();
 
         System.out.println("=== Netrunner Console ===");
         System.out.println("Type HELP for a list of commands.");
@@ -58,7 +59,7 @@ public class NetRunnerConsole {
                     movef.run(session);
                     break;
                 case "FLOOR":
-                    System.out.println("📡 You are currently on floor: " + session.getCurrentFloor());
+                    System.out.println("📡 You are currently on floor: " + (session.getCurrentFloor() - 1));
                     break;
                 case "SLIDE":
                     slide.run(session, promptRoll("Enter your Interface Roll: "));
@@ -80,6 +81,9 @@ public class NetRunnerConsole {
                     break;
                 case "VIRUS":
                     virus.run(session);
+                    break;
+                case "ZAP":
+                    zap.run();
                     break;
                 case "EXIT":
                     System.out.println("🛑 Jacking out...");
@@ -113,6 +117,7 @@ public class NetRunnerConsole {
         System.out.println("  SCAN        - Check current network conditions");
         System.out.println("  SLIDE       - Slip past active Black ICE undetected");
         System.out.println("  VIRUS       - Leave a malicious virus in the system");
+        System.out.println("  ZAP         - Attack a Black-ICE");
         System.out.println("  HELP        - Show this help message");
         System.out.println("  EXIT        - Jack out of the network");
     }

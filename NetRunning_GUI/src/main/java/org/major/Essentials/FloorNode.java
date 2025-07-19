@@ -11,6 +11,8 @@ public class FloorNode {
     private final List<String> programs;
     private final List<String> controls;
     private final String data;
+    private final String worth;
+    private final String content;
 
     // Black ICE stats
     private final int perception;
@@ -19,9 +21,9 @@ public class FloorNode {
     private final int defense;
     private final int rez;
 
-    // NEW fields for Eye-Dee
-    private final String worth;
-    private final String content;
+    // Passwd stats
+    private boolean locked = false;
+
 
     public FloorNode(
             String type,
@@ -55,6 +57,7 @@ public class FloorNode {
         this.rez = rez;
         this.worth = worth;
         this.content = content;
+        this.locked = locked;
     }
 
     public String getType() { return type; }
@@ -76,6 +79,7 @@ public class FloorNode {
 
     public String getWorth() { return worth; }
     public String getContent() { return content; }
+    public boolean getLockedState() { return locked; }
 
     public String getAllInfo() {
         StringBuilder sb = new StringBuilder();
@@ -111,5 +115,13 @@ public class FloorNode {
 
     public String getInfo() {
         return "Type: " + type;
+    }
+
+    public boolean isLocked() {
+        return locked;
+    }
+
+    public void upFloor(int currFloor) {
+        currFloor++;
     }
 }

@@ -9,7 +9,7 @@ public class BlackICE {
     private final int maxRez;
 
     private int currentRez;
-    private boolean active = true;
+    private boolean active = false;
 
     public BlackICE(String iceType, int perception, int speed, int attack, int defense, int rez) {
         this.iceType = iceType;
@@ -46,5 +46,10 @@ public class BlackICE {
         return active
                 ? "🧠 " + iceType + " — REZ: " + currentRez + "/" + maxRez
                 : "☠️ " + iceType + " — DEACTIVATED";
+    }
+
+    public boolean setActive(boolean b) {
+        active = b;
+        return active;
     }
 }
