@@ -17,7 +17,7 @@ CP="target/classes:$JSON_JAR"
 
 # === Step 3: Run your main class ===
 # Change this to your actual main class (with package)
-MAIN_CLASS="org.example.Main"
+MAIN_CLASS="org.major.Main"
 
 echo "🚀 Running $MAIN_CLASS..."
 java -cp "$CP" "$MAIN_CLASS"
