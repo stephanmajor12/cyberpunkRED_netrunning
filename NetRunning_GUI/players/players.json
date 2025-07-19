@@ -1,0 +1,16 @@
+{
+  "players": [
+    {
+      "name": "Zero",
+      "interface": 6
+    },
+    {
+      "name": "Nyx",
+      "interface": 4
+    },
+    {
+      "name": "Byte",
+      "interface": 5
+    }
+  ]
+}

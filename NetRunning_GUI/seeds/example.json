@@ -1,0 +1,45 @@
+{
+  "name": "example",
+  "floors": [
+    {
+      "type": "PASSWORD",
+      "details": {
+        "dv": 6,
+        "password": "Z3x9Pq"
+      }
+    },
+    {
+      "type": "BLACK_ICE",
+      "details": {
+        "ice_type": "WISP",
+        "perception": 4,
+        "speed": 6,
+        "attack": 6,
+        "defense": 2,
+        "rez": 15
+      }
+    },
+    {
+      "type": "DATA",
+      "details": {
+        "dv" : 6,
+        "worth" : "€$500",
+        "content" : "This is a basic description."
+      }
+    },
+    {
+      "type": "PASSWORD",
+      "details": {
+        "dv" : 12,
+        "password": "testPass"
+      }
+    },
+    {
+      "type": "CONTROL_NODE",
+      "details": {
+        "controls": ["Cameras", "Turrets"],
+        "dv": 6
+      }
+    }
+  ]
+}
