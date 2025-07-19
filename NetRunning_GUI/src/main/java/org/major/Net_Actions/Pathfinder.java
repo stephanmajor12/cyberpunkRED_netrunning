@@ -8,39 +8,28 @@ import java.util.List;
 public class Pathfinder {
     public void run(NetSession session, int myRoll) {
         List<FloorNode> floors = session.getNet().getFloors();
-        boolean passwdFlag = false;
-        boolean checkFailed = false;
+        boolean blockedByPassword = false;
 
         for (int i = 0; i < floors.size(); i++) {
             FloorNode node = floors.get(i);
+            int level = i + 1;
 
-            if (node.getType().equalsIgnoreCase("PASSWORD")) {
-                if (myRoll > node.getDv()) {
-                    passwdFlag = false;
-                    System.out.println("[LEVEL " + (i + 1) + "]");
-                    System.out.println(node.getInfo());
+            if (blockedByPassword) {
+                // Stop revealing anything after the blocked password
+                break;
+            }
+
+            if ("PASSWORD".equalsIgnoreCase(node.getType())) {
+                int dv = node.getDv();
+                if (myRoll > dv) {
+                    System.out.println("[LEVEL " + level + "]\n" + node.getInfo());
                 } else {
-                    passwdFlag = true;
-                    if (!checkFailed) {
-                        if(myRoll > node.getDv()) {
-                            System.out.println("Password detected on Floor [LEVEL CODE: " + (i + 1) + "], unable to see past it.");
-                        } else {
-                            System.out.println("[LEVEL " + (i + 1) + "]\n" +node.getInfo());
-                        }
-                    }
-                    checkFailed = true;
-                    continue; // don't show anything past the password
+                    System.out.println("🔒 Password node on Floor [LEVEL " + level + "] — Access denied. Cannot scan deeper.");
+                    blockedByPassword = true;
                 }
             } else {
-                System.out.println("[LEVEL " + (i + 1) + "]\n" +node.getInfo());
+                System.out.println("[LEVEL " + level + "]\n" + node.getInfo());
             }
-
-            /*
-            if (!passwdFlag) {
-                System.out.println(node.getAllInfo());
-            }
-
-             */
         }
 
         System.out.println("pf2e.exe finished with exit code 0");
