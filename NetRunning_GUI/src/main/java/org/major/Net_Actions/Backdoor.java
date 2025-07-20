@@ -18,6 +18,7 @@ public class Backdoor {
         if(floors.get(currFloor).getType().equals("PASSWORD")) {
             if(myRoll > floors.get(currFloor).getDv()) {
                 System.out.println("=== BACKDOOR SUCCESS WELCOME IN HACKER ===");
+                floors.get(currFloor).getLockedState();
                 System.out.println(floors.get(currFloor).getAllInfo());
             } else {
                 System.out.println("=== BACKDOOR FAILED ===");
