@@ -22,7 +22,7 @@ public class FloorNode {
     private final int rez;
 
     // Passwd stats
-    private boolean locked = false;
+    private boolean locked = true;
 
 
     public FloorNode(
@@ -57,7 +57,6 @@ public class FloorNode {
         this.rez = rez;
         this.worth = worth;
         this.content = content;
-        this.locked = locked;
     }
 
     public String getType() { return type; }
@@ -117,7 +116,8 @@ public class FloorNode {
         return "Type: " + type;
     }
 
-    public boolean isLocked() {
+    public boolean setLockedState(boolean state) {
+        this.locked = state;
         return locked;
     }
 

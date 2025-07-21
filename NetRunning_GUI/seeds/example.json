@@ -2,6 +2,12 @@
   "name": "example",
   "floors": [
     {
+      "type": "JACKING-IN",
+      "details": {
+        "desc": "This is an example description."
+      }
+    },
+    {
       "type": "PASSWORD",
       "details": {
         "dv": 6,

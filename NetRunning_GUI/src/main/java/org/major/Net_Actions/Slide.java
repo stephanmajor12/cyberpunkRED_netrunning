@@ -14,10 +14,12 @@ public class Slide {
     private boolean usedThisTurn = false;
 
     public void run(NetSession session, int netrunnerRoll) {
+        /*
         if (usedThisTurn) {
             System.out.println("🚫 You've already used Slide this turn.");
             return;
         }
+         */
 
         NetArchitecture net = session.getNet();
         int currFloor = session.getCurrentFloor();
@@ -44,14 +46,17 @@ public class Slide {
             System.out.println("✅ Success! You slipped past the ICE.");
             int newFloor = getPlayerDirection(session, net);
             if (newFloor != -1) {
+                // ✨ Stop ICE from following
+                blackICE.setActive(false);
+                System.out.println("👤 You broke the ICE's lock. It will not follow you.");
+
                 session.setCurrentFloor(newFloor);
-                System.out.println("📡 Escaped to floor: " + (newFloor + 1));
+                System.out.println("📡 Escaped to floor: " + (newFloor));
             } else {
                 System.out.println("⚠️ You escaped the ICE but couldn’t move due to an obstruction.");
             }
-        } else {
-            System.out.println("❌ Slide failed. The ICE is still locked on.");
         }
+
 
         usedThisTurn = true;
     }

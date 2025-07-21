@@ -12,7 +12,6 @@ public class Pathfinder {
 
         for (int i = 0; i < floors.size(); i++) {
             FloorNode node = floors.get(i);
-            int level = i + 1;
 
             if (blockedByPassword) {
                 // Stop revealing anything after the blocked password
@@ -22,13 +21,13 @@ public class Pathfinder {
             if ("PASSWORD".equalsIgnoreCase(node.getType())) {
                 int dv = node.getDv();
                 if (myRoll > dv) {
-                    System.out.println("[LEVEL " + level + "]\n" + node.getInfo());
+                    System.out.println("[LEVEL " + i + "]\n" + node.getInfo());
                 } else {
-                    System.out.println("🔒 Password node on Floor [LEVEL " + level + "] — Access denied. Cannot scan deeper.");
+                    System.out.println("🔒 Password node on Floor [LEVEL " + i + "] — Access denied. Cannot scan deeper.");
                     blockedByPassword = true;
                 }
             } else {
-                System.out.println("[LEVEL " + level + "]\n" + node.getInfo());
+                System.out.println("[LEVEL " + i + "]\n" + node.getInfo());
             }
         }
 

@@ -7,10 +7,12 @@ public class EyeDee {
     private boolean usedThisTurn = false;
 
     public void run(NetSession session, int netrunnerRoll) {
+        /*
         if (usedThisTurn) {
             System.out.println("🚫 You've already used Eye-Dee this turn.");
             return;
         }
+         */
 
         int currFloor = session.getCurrentFloor(); // Use session's current floor (1-based)
         FloorNode floor = session.getNet().getFloor(currFloor - 1); // Convert to 0-based index
