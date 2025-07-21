@@ -1,0 +1,58 @@
+{
+  "name": "wisp_camera_lockdown",
+  "floors": [
+    {
+      "type": "JACKING-IN",
+      "details": {
+        "desc": "CHIPPIN' IN!"
+      }
+    },
+    {
+      "type": "PASSWORD",
+      "details": {
+        "dv": 6,
+        "password": "val_ti31"
+      }
+    },
+    {
+      "type": "BLACK_ICE",
+      "details": {
+        "ice_type": "WISP",
+        "perception": 4,
+        "speed": 6,
+        "attack": 5,
+        "defense": 2,
+        "rez": 14
+      }
+    },
+    {
+      "type": "CONTROL_NODE",
+      "details": {
+        "controls": ["Observation Camera"],
+        "dv": 6
+      }
+    },
+    {
+      "type": "DATA",
+      "details": {
+        "dv": 8,
+        "worth": "Encrypted",
+        "content": "Surveillance logs - encoded"
+      }
+    },
+    {
+      "type": "PASSWORD",
+      "details": {
+        "dv": 12,
+        "password": "H0lyD1v3r34"
+      }
+    },
+    {
+      "type": "CONTROL_NODE",
+      "details": {
+        "controls": ["Turrets"],
+        "dv": 12
+      }
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "name": "raven_ground_entry",
+  "floors": [
+    {
+      "type": "JACKING-IN",
+      "details": {
+        "desc": "CHIPPIN' IN!"
+      }
+    },
+    {
+      "type": "PASSWORD",
+      "details": {
+        "dv": 6,
+        "password": "zomzom23"
+      }
+    },
+    {
+      "type": "BLACK_ICE",
+      "details": {
+        "ice_type": "RAVEN",
+        "perception": 5,
+        "speed": 7,
+        "attack": 6,
+        "defense": 3,
+        "rez": 18
+      }
+    },
+    {
+      "type": "CONTROL_NODE",
+      "details": {
+        "controls": ["Ground Drone"],
+        "dv": 6
+      }
+    }
+  ]
+}
