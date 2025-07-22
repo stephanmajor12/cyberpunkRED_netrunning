@@ -4,6 +4,7 @@ set -e
 # === Step 1: Compile with Maven ===
 echo "🔧 Compiling with Maven..."
 mvn clean compile
+clear
 
 # === Step 2: Build classpath ===
 # Adjust this if you have more dependencies

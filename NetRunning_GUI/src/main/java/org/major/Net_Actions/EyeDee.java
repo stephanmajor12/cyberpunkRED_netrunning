@@ -15,7 +15,7 @@ public class EyeDee {
          */
 
         int currFloor = session.getCurrentFloor(); // Use session's current floor (1-based)
-        FloorNode floor = session.getNet().getFloor(currFloor - 1); // Convert to 0-based index
+        FloorNode floor = session.getNet().getFloor(currFloor); // Convert to 0-based index
         System.out.println("Current Floor: " + currFloor);
 
         if (!"DATA".equalsIgnoreCase(floor.getType())) {
