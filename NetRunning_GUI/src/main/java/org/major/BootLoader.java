@@ -1,11 +1,13 @@
 package org.major;
 
+import java.io.IOException;
+
 public class BootLoader {
 
     public static void main(String[] args) {
         try {
             clearScreen();
-            typeOut("\u001B[32m[BOOT] Initializing Mainframe BootLoader v1.3.7...\u001B[0m", 40);
+            typeOut("\u001B[32m[BOOT] Initializing Mainframe BootLoader v1.3.2.....\u001B[0m", 40);
             pause(500);
             typeOut("[SYS] Verifying system integrity...", 30);
             pause(500);
@@ -52,6 +54,10 @@ public class BootLoader {
             typeOut("[SYS] Finalizing memory sandbox...", 25);
             pause(600);
             typeOut("\u001B[32mSYSTEM ONLINE. WELCOME, OPERATOR.\u001B[0m", 50);
+
+            // 🎬 Play samuraiLogo.mp4 after boot
+            playVideo("D:\\Orangized stuff\\Games\\CYBERPUNK_RED\\cyberpunkRED_netrunning\\samuraiLogo.mp4");
+
         } catch (InterruptedException e) {
             System.err.println("Boot interrupted.");
         }
@@ -71,7 +77,25 @@ public class BootLoader {
     }
 
     private static void clearScreen() {
-        System.out.print("\u001B[2J\u001B[H"); // ANSI escape for clearing screen
+        System.out.print("\u001B[2J\u001B[H");
         System.out.flush();
+    }
+
+    private static void playVideo(String videoPath) {
+        try {
+            String os = System.getProperty("os.name").toLowerCase();
+
+            if (os.contains("win")) {
+                Runtime.getRuntime().exec(new String[]{"cmd", "/c", "start", "", videoPath});
+            } else if (os.contains("mac")) {
+                Runtime.getRuntime().exec(new String[]{"open", videoPath});
+            } else {
+                Runtime.getRuntime().exec(new String[]{"xdg-open", videoPath});
+            }
+
+            System.out.println("🎬 Playing: " + videoPath);
+        } catch (IOException e) {
+            System.err.println("⚠️ Failed to play video: " + e.getMessage());
+        }
     }
 }
