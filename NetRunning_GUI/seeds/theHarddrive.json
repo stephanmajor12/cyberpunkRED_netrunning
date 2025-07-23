@@ -1,0 +1,74 @@
+{
+  "name": "offline_drive_backup_A",
+  "floors": [
+    {
+      "type": "JACKING-IN",
+      "details": {
+        "desc": "YOU FEEL THE HUM OF AN OLD HARD-DRIVE SPINNING TO LIFE."
+      }
+    },
+    {
+      "type": "PASSWORD",
+      "details": {
+        "dv": 8,
+        "password": "archive404"
+      }
+    },
+    {
+      "type": "DATA",
+      "details": {
+        "dv": 5,
+        "worth": "$10",
+        "content": "Employee Directory (Encrypted)"
+      }
+    },
+    {
+      "type": "DATA",
+      "details": {
+        "dv": 6,
+        "worth": "$150",
+        "content": "R&D Prototype Specs (Partial)"
+      }
+    },
+    {
+      "type": "DATA",
+      "details": {
+        "dv": 4,
+        "worth": "$50",
+        "content": "Company Financial Reports Q1-Q2"
+      }
+    },
+    {
+      "type": "DATA",
+      "details": {
+        "dv": 7,
+        "worth": "Blackmail",
+        "content": "CEO Voice Memos - Confessional #3"
+      }
+    },
+    {
+      "type": "DATA",
+      "details": {
+        "dv": 7,
+        "worth": "Null",
+        "content": "Corrupted Audio Logs (Unusable)"
+      }
+    },
+    {
+      "type": "DATA",
+      "details": {
+        "dv": 6,
+        "worth": "$20",
+        "content": "Security Camera Footage - Loading Bay"
+      }
+    },
+    {
+      "type": "DATA",
+      "details": {
+        "dv": 9,
+        "worth": "$220",
+        "content": "Top Secret: Project Vanholme Neural Mesh"
+      }
+    }
+  ]
+}
