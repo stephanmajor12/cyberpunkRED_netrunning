@@ -53,6 +53,14 @@
         "controls": ["Turrets"],
         "dv": 12
       }
+    },
+    {
+      "type": "DATA",
+      "details": {
+        "dv" : 12,
+        "worth" : "€$500",
+        "content" : "Lots and lots of copyrighted music. Ready to be cracked and sold. For a price."
+      }
     }
   ]
 }
