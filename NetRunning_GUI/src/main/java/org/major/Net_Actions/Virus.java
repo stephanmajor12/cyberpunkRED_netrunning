@@ -5,7 +5,7 @@ import org.major.Essentials.NetSession;
 public class Virus {
     public void run(NetSession session) {
         int currentFloor = session.getCurrentFloor();
-        int maxFloor = session.getNet().size();
+        int maxFloor = session.getNet().size() - 1;
 
         System.out.println("Max Floor: " + maxFloor);
         if (currentFloor != maxFloor) {
